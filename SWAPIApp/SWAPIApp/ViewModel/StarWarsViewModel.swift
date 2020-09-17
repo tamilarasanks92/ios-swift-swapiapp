@@ -34,7 +34,7 @@ extension StarWarsViewModel {
                 print("Invalid URL")
                 return
             }
-            self.characters = characters
+            self.characters = characters.sorted(by: {$0.name < $1.name})
             completion(characters)
         }
     }
